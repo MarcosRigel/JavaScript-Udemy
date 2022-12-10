@@ -1,0 +1,110 @@
+Seção 02 – Tipos de dados e operadores lógicos
+# O que são tipos de dados?
+► A classificação/categoria de um dado;
+► Dados são por exemplo: 13, ‘Olá’, True;
+► Os tipos de dados existentes no JavaScript são:
+► Number (Aritimético, Special Numbers);
+► String;
+► Boolean (Comparações, operadores lógicos);
+► Empty Values (null, undefined);
+
+# Tipo de dado: number
+► Obviamente este tipo trata de números;
+► console.log (typeof 13);
+► console.log (typeof 1.8);
+► console.log (typeof -5);
+
+Numbers: aritmética
+► Operação mais feita com os números em JS;
+► E o resultado da operação aritmética produz um novo Number;
+► console.log(2 + 2)
+► console.log(2 * 4 - 3);
+► console.log(8 / 4);
+► Funciona com a mesma da matemática;
+► console.log(5 + (2 * 4));
+► + -> soma;
+► - -> subtração;
+► / -> divisão;
+► * -> multiplicação;
+► % -> resto;
+
+Numbers: Special Numbers
+► Considerando números, mas não funcionam como números;
+► Infinity;
+► -Infinity;
+► NaN (Not a Number);
+
+String
+► String = texto;
+► console.log(typeof 'Isso é uma String');
+► console.log(typeof "Este texto aqui também");
+► console.log(typeof `E este também`); (template literals)
+
+String: detalhes mais técnicos
+► A \ pode dar um 'escape' na String, e isso permite 'efeitos especiais';
+► Por exemplo: \n pula uma linha
+► console.log("Essa é uma String \n De duas linhas");
+► Para inserir uma 'ou" devemos iniciar a String com a aspa inversa que desejamos inserir;
+► O template literals serve para computar valores também, ex:
+► console.log(`A soma de 2+2 é ${2+2}`);
+► Concatenação é um processo de 'somar' Strings, veja:
+► console.log("salada" + "de" + "fruta");
+
+Booleans
+► Serve para guardar um valor de uma comparação, por exemplo;
+► Os únicos valores possíveis são:
+► True(verdadeiro);
+► False(falso);
+► console.log(5 > 2);
+► console.log(3 > 10);
+
+Booleans: comparações
+► Maior que: >
+► Menor que: <
+► Maior ou igual: >=
+► Menor ou igual: <=
+► Igual: ==
+► Diferente: !=
+► Idêntico: ===
+
+Booleans: operadores lógicos
+► Por meio de uma comparação resultam em um Boolean
+► && - and -> para ser true, os dois 'lados' da comparação precisam ser true
+► || - or -> para ser true, basta um dos 'lados' da comparação ser true;
+► ! - not -> inverter os valores (true vira false);
+► && - and
+► || - or
+► ! - not
+
+A       B       A and B     A OR B    NOT A
+False   False   False       False     True
+False   True    False       True      True
+True    False   False       True      False
+True    True    True        True      False
+
+Booleans: Operadores lógicos exemplos
+► console.log(true && true);
+► console.log(true && false);
+► console.log(false || false);
+► console.log(!true);
+
+Boolean: operador ternário
+► Faz um comparativo em apenas uma linha de código;
+► console.log(true ? 1 : 2);
+► console.log(false ? 'falso':'verdadeiro');
+► Não é muito utilizado e pode deixar o código complicado de ler;
+
+Empty Values
+► Temos duas palavras reservadas da linguagem que servem para existentes
+casos:
+► undefined e null;
+► Sempre que você se deparar com estas palavras, o JS basicamente quer dizer que os
+valores não existem;
+
+Conversao de tipo automatica
+► O JavaScript em determinadas operações, converte silenciosamente o tipo do resultado
+final da operação, veja:
+► console.log(5 * null) // 0
+► console.log("5" - 3) // 2
+► console.log("5" + 1) // 51
+► console.log("dois" * "três"); // NaN
