@@ -1,0 +1,271 @@
+# O que é um programa/software?
+► É um conjunto de declarações (statements);
+► Statements são conjuntos de expressões (expressions);
+► Expression é todo fragmento de código que produz um valor;
+► Software tem um 'objetivo';
+► Statements 'guiam' o software para seu objetivo;
+► Expression são os valores que os statements esperam para guiar o software;
+► Nós já vimos statements e expressions de forma simples;
+► Statement: console.log(1 > 2);
+► Expression: console.log('batata');
+► Porém ainda não é o suficiente para criar um software;
+► E é essa junção dos conceitos nosso objetivo nesta seção!=)
+
+# Como salvar valores na memória
+► Salvamos os valores em variaveis(isso é um statement);
+► let laranja = 5;
+► E depois podemos criar expressões com os valores salvos;
+► console.log(laranjas * laranjas);
+► console.log(`tem ${laranjas} na sexta`);
+► podemos tambem mudar o valor que foi salvo anteriormente;
+► laranjas = laranjas + 1;
+► console.log(laranjas);
+► Um let pode definir várias variáveis também;
+► let quadrado = 4, triangulo = 3, retangulo = 4;
+► console.log(quadrado * (triangulo + retangulo));
+
+# Outras maneiras de salvar valor
+► Podemos definir valores com var e const;
+► var nome = 'Pedro';
+► console.log(nome);
+► const sobrenome = 'Soares';
+► console.log(sobrenome);
+
+# Outras maneiras de salvar valor
+► var é uma forma mais antiga, você deve optar por let ou const;
+► const vem de constante, ou seja, o seu valor não pode ser alterado;
+► Mais a frente no curso, veremos em detalhes diferenças de var, let e const;
+
+# Conversão no nome das variaveis
+► Não pode começar com um número (let 2teste);
+► Mas pode terminar com número (let teste9 = 'testando')
+► Pode ter $ ou _, mas não outros caracteres especiais (let $nmoe, _nome);
+► Mas não pode ter pontuação ou outros especiais (let @teste)
+► Podemos iniciar com letras maiúscula (let Nome = 'Matheus');
+► Ou usar camelCase (let meuPrimeiroNome = 'Matheus');
+
+# Nomes de variaveis reservados
+► Alguns nomes não podem ser utilizados para iniciar variaveis, veja;
+► break case catch class const continue debugger default delete do else
+enum export extends false finally for function if implements import
+interface in instanceof let new packege private protected public return
+static super switch this throw true try typeof var void while with yield
+► Ex: let brak = 'parar';
+► Porém podemos usar elas + alguma palavra/digito;
+► Ex: let brackmatheus = 1;
+
+# Como funciona o ambiente
+► Quando qualquer programa é iniciado, um ambiente é criado;
+► E este ambiente não inicia vazio
+► Ele contém funções nativas da linguagem;
+► Funções são blocos de código, que nos retornam um valor ou ação;
+► O ambiente de JavaScript, neste curso, poderiamos entender como o navegador
+
+# A estrutura de uma função
+► Antes de mais nada: funções são chamadas durante o programa;
+► Você também pode ouvir: executar, chamar, invocar uma função;
+► e nós chamamos a função utilizando o nome dela + abrindo e fechando parênteses;
+
+nomeDaFuncao();
+
+► Também podemos inserir parâmetros, em algumas funções são obrigatórios;
+► Basicamente são valores que podem mudar o resultado da função;
+
+nomeDaFuncao(parametro1, parametro2);
+
+# Função built-in: prompt()
+► Recebe um input do usuário do sistema e pode guardar este valor;
+► Ex: let idade = prompt('Qual sua idade?');
+► console.log(idade);
+► Esta função é pouco utilizada.
+
+# Função built-in: alert()
+► Exibe uma mensagem na tela do usuário;
+► Ex: alert('Veja esta mensagem!');
+► Esta função é pouco utilizada.
+
+# Função built-in: Math.x()
+► Função utilizada para expressões/cálculos matemáticos;
+► Ex: let maiorNumero = Math.max(1,5,2,3);
+► console.log(maiorNumero);
+► Esta função é muito utilizada.
+
+# Função built-in: console.log()
+► Exibe uma mensagem na tela, que é o argumento que passamos;
+► Ex: console.log('exibindo esta mensagem!');
+► Esta função é muito utilizada.
+► Veremos como fazer as nossas funções mais a frente;
+
+# O que são estruturas de controle?
+► Um programa é executado de cima para baixo;
+► Com as estruturas podemos modelar o fluxo do programa;
+► Ou seja, dependendo dos valores, de statements e expressions, ele 
+tomará um caminho diferente;
+
+# Estrutura condicional: if 
+► O programa vai executar um bloco de codigo, SE algo acontecer;
+► Onde algo é a condição imposta por um statement;
+► Que resulta em um boolean (true or false);
+
+# Estrutura condicional: else
+► Podemos executar um outro bloco de código, caso a instrução do if não seja atendida;
+► Ou seja, SE NÃO EXECUTAR o bloco if, EXECUTE o bloco else;
+
+    let nome = 'Pedro'
+
+    if (nome == 'João') {
+        console.log('Seu nome é João');
+    }
+    else {
+        console.log('O seu nome não é João');
+    }
+
+# Estrutura condicional: else if
+► Ainda podmeos encadear mais condições com o else if;
+► Ou seja, antes de executar um else, ou até mesmo sem ele, podemos verificar mais uma
+condição;
+
+let a = 5;
+let b = 3;
+
+if (a + b == 3) {
+    console.log('O resultado é 3');
+}
+else if (a == 4) {
+    console.log('O valor de a é 4');
+}
+else if (b == 3) {
+    console.log('O valor de b é 3')
+}
+else {
+    console.log('Nenhuma das condições acima!');
+}
+
+# O que são estruturas de repetição 
+► A ideia é repetir uma ação até atingir uma condição;
+► Ao invés de repetirmos o mesmo código várias vezes, criamos um statement que fará uma 
+checagem em cada loop;
+► Também chamada de loop;
+
+# Estrutura de repetição: while
+► Fará uma ação, até que a condição seja atingida
+► Precisamos realmente 'definir um fim' para o loop, para não termos o problema de loop
+infinito;
+
+let x = 10;
+
+while (x > 0) {
+    console.log(x);
+    x = x - 1;
+}
+
+# Estrutura de repetição: do while
+► Semelhante ao while, porém a estrutura muda um pouco
+► Este método quase não é utilizado!
+
+let y = 0;
+
+do {
+    console.log(y);
+    y = y + 1;
+} while (y < 5);
+
+# Estrutura de repetição: for
+► Semelhante ao while, porém amplamente utilizado
+► Na minha opnião: é a estrutura de repetição mais fácil de compreender, aconselho a
+preferir pelo for
+
+    for(let numero = 2; numero < 100; numero = numero * 2) {
+        console.log("O numero é: " + numero);
+    }
+
+# Precisamos falar sobre identação
+► Serve para organizar o código e deixar mais legível;
+► Não há uma regra, porém cada bloco aninhado deve ser identado uma
+vez;
+► Pessoas vão te agradecer no futuro por identar o código!
+► Para a execução do código não afeta em nada.
+
+let x = 2;
+let y = 0;
+
+if (x > 2) {
+    y = x + 2;
+    if(y == 4) {
+        console.log('Y é 4');
+    }
+}
+
+# Forçando a saída de um loop: break
+► As vezes precisamos para o loop antes que complete todo o seu ciclo;
+► Para isso utilizamos o break;
+
+for (let i=5;i<20;i++) {
+    if (i%10==0) {
+        console.log('Saiu do loop');
+        break;
+    }
+    console.log('Prosseguindo o loop');
+}
+
+# Pulando uma execução do loop: continue
+► Dependendo da nossa lógica, podmemos pular o resto da execução do loop;
+► Para isso utilizamos a palavra continue;
+
+let x = 0;
+
+while(x < 11) {
+    x = x + 1;
+    if (x % 2 == 0) {
+        continue;
+    }
+    console.log(x);
+    x = x + 1;
+}
+
+# Incrementando a variavel: forma fácil
+► Podemos incrementar uma variável de forma mais fácil: x += 1;
+► Ou até mesmo x++;
+
+for (let numero = 0; numero < 10; numero += 1) {
+    console.log("O numero é: " + numero);
+}
+
+# Estrutura condicional: switch
+► Quando há a necessidade de vários ifs, podemos utilizar o switch/case;
+► Para sair de um case podemos utilizar o break;
+► Podemos inserir uma expressão default, para caso nenhum valor for correspondido;
+► Obs: muitos programadores optam por usar vários ifs!
+
+switch (nome) {
+    case "João":
+        console.log("O seu nome é João");
+        break;
+    case "Marcos":
+        console.log("O seu nome é Marcos");
+        break;
+    default:
+        console.log("O seu nome não é João nem Marcos!");
+        break;
+}
+
+# Um pouco mais sobre declaração de variaveis
+► let carrovermelhogrande; (difícil de ler)
+► let carro_vermelho_grande;
+► let CarroVermelhoGrande;
+► ler carroVermelhoGrande; (mais utilizado)
+
+# Comentários no JavaScript
+► Utilizado para explicar o que acontece no código;
+► Ou também para testar se algum código está afetando o sistema;
+► Completamente ignorado pelo interpretador de código;
+► Uma linha e multi-linha;
+
+// Comentário de uma linha
+
+/*
+    Comentário
+    de varias 
+    linhas
+
+*/
