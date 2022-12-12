@@ -1,0 +1,169 @@
+# O que são funções?
+► Funçõe são estruturas de código menores que são reaproveitadas durante a execução/construção
+de um programa;
+► Principal objetivo: poupar repetição de código;
+► Podem ser consideradas 'subprogramas';
+
+# Definindo uma função
+► Uma função tem uma estrutura um pouco mais complexa;
+► Devemos declarar a função sempre com a palavra function;
+► Uma função deve ter um nome;
+► Pode conter argumentos/parâmetros, definidos entre ();
+► O corpo da função é definido entre {}; (escopo)
+► Geralmente uma função retorna um valor;
+► É possível declarar funções em variáveis;
+
+function escreverNoConsole () {
+    console.log("Escrevendo no console!");
+}
+
+escreverNoConsole();
+
+const textoNoConsole = function() {
+    console.log("Texto no console!");
+}
+
+testoNoConsole();
+
+const textPorParametro = function(texto) {
+    console.log(texto);
+}
+
+textPorParametro("Testando por parâmetro!");
+
+# Mais sobre funções
+const soma = function(a, b) {
+    return a + b;
+}
+
+console.log(soma(3,5));
+
+const saudacao = function(nome) {
+    if (nome == "Matheus") {
+        return "Olá Matheus";
+    }
+}
+
+console.log(saudacao("Matheus"));
+
+# Escopo de uma função
+► O que acontece dentro de uma função fica separado do escopo global;
+► O escopo global seria todo o arquivo de JavaScript;
+
+let n = 10;
+
+const numero = function() {
+    let n = 25;
+    console.log(n);
+}
+
+console.log(n);
+
+
+# Mais sobre escopo
+► Atualmente cocm let e const, qualquer bloco de código pode separar seu escopo 
+(um if por exemplo);
+► Isso é muito bom pois separa os contextos, com var isso não acontecia
+► Ou seja, podemos ter escopos diferentes não só com funções;
+
+let x = 10;
+
+if (true) {
+    let x = 20;
+    console.log(x); // escopo if
+}
+
+console.log(x); // escopo global
+
+# Escopo aninhado (Nested Scopes)
+► Por causa da possibilidade de criar um escopo, podemos ter mais níveis de espoco;
+
+let y = 5;
+
+const multiplicar = function (n) {
+    let y = n * 2;
+
+    console.log(y);
+
+    if (y == 10) {
+        let y = 55;
+        console.log(y);
+    }
+}
+
+multiplicar(y);
+
+# Arrow Functions
+► Uma outra forma de escrever funções;
+► Bem utilizada nos frameworks modernos;
+► Porém não deve substituir as functions por completo (veremos mais tarde os detalhes);
+
+const parOuImpar = (n) => {
+    return n % 2;
+};
+
+console.log(parOuImpar(3));
+
+# Mais sobre Arrow Functions
+► Se só tem um parametro podemos remover os parênteses do argumento e o return;
+► Se a expressão for pequena, pode até ser feita em uma linha sem prejudicar a leitura do código;
+
+const raizQuadrada = (x) => {
+    return x * x;
+}
+
+# Argumentos opcionais
+► Podemos chamar uma função em JS sem o número igual de parâmetros determinados;
+
+function nomeComIdade(nome, idade) {
+
+    if (idade === undefined) {
+        console.log("Seu nome é " + nome);
+    }
+    else {
+        console.log("Seu nome é " + nome + " e você tem " + idade + " anos");
+    }
+}
+
+nomeComIdade("João");
+nomeComIdade("João", 42);
+
+# Argumentos com valor default
+► Podemos pre-determinar um valor para um argumento;
+
+function repetirFrase(frase, n=2) {
+    for(let x = 1; x <= n; x++) {
+        console.log(frase + " " + x);
+    }
+}
+
+repetirFrase("Testando", 5);
+repetirFrase("Só duas vees");
+
+# Closure
+► uma função que se lembra do ambiente em que ela foi criada;
+
+function armazenarSoma(x) {
+    return y => x + y;
+}
+
+let soma1 = armazenarSoma(3);
+console.log(soma1(5)); // 8
+let soma2 = armazenarSoma(5);
+console.log(soma2(10)); // 15
+
+# Recursion
+► Uma funcionalidade que permite uma função se chamar novamente;
+► Isso pode ser um problema caso a função se chame muitas vezes;
+
+function retornarNumeroPar(n) {
+    if (n % 2 == 0) {
+        console.log("n agora é par: " + n);
+    }
+    else {
+        console.log(n);
+        retornarNumeroPar(n - 1);
+    }
+}
+
+retornarNumeroPar(33);
